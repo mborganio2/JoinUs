@@ -10,13 +10,13 @@
 
 /* Constrain Hero Section content */
 .hero {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 /* Constrain Details Section content */
 .details {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
