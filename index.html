@@ -9,7 +9,9 @@
   --paper: #fffdf8;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -29,7 +31,9 @@ a {
   text-decoration: none;
 }
 
-/* Hero */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
 
 .hero {
   min-height: 100svh;
@@ -91,7 +95,7 @@ nav {
   opacity: 0.55;
 }
 
-/* Hero content */
+/* Hero Content */
 
 .hero-content {
   position: relative;
@@ -124,7 +128,7 @@ h1 {
 
 h1 em {
   color: #b36978;
-  font-weight: 400;
+  font-style: normal;
 }
 
 .intro {
@@ -135,7 +139,7 @@ h1 em {
   line-height: 1.8;
 }
 
-/* Date */
+/* Date Lockup */
 
 .date-lockup {
   display: flex;
@@ -176,9 +180,7 @@ h1 em {
   font: 600 11px "DM Sans", sans-serif;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .primary:hover {
@@ -190,7 +192,7 @@ h1 em {
   font-size: 18px;
 }
 
-/* Moon and stars */
+/* Moon & Stars Decorative Elements */
 
 .moon {
   position: absolute;
@@ -274,7 +276,9 @@ h1 em {
   text-align: center;
 }
 
-/* Event details */
+/* ==========================================================================
+   Event Details
+   ========================================================================== */
 
 .details {
   padding: 120px 6vw;
@@ -339,7 +343,7 @@ h1 em {
   font-size: 13px;
 }
 
-/* Celebration note */
+/* Celebration Note */
 
 .note-card {
   position: relative;
@@ -371,7 +375,9 @@ h1 em {
   color: #7f898f;
 }
 
-/* RSVP section */
+/* ==========================================================================
+   RSVP Section
+   ========================================================================== */
 
 .rsvp {
   padding: 120px 6vw 35px;
@@ -396,7 +402,7 @@ h1 em {
   text-transform: uppercase;
 }
 
-/* RSVP modal */
+/* RSVP Modal */
 
 .modal-backdrop {
   position: fixed;
@@ -490,7 +496,7 @@ h1 em {
   width: 100%;
 }
 
-/* Confirmation state */
+/* Confirmation State */
 
 .success {
   padding: 30px 0;
@@ -508,7 +514,9 @@ h1 em {
   line-height: 1.7;
 }
 
-/* Mobile */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 
 @media (max-width: 720px) {
   .hero {
@@ -564,8 +572,6 @@ h1 em {
   }
 }
 
-/* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -575,4 +581,3 @@ h1 em {
     transition: none;
   }
 }
-
