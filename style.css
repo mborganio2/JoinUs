@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
+/* Container for the PNG icons */
+.detail-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf3f4;
+  overflow: hidden; /* Keeps images neatly inside the circle */
+}
 
+/* Specific background for the middle icon container */
+.detail-grid article:nth-child(2) .detail-icon {
+  background: #fae8e7;
+}
+
+/* PNG Image Styling */
+.detail-icon img {
+  width: 24px;       /* Adjust size as needed */
+  height: 24px;      /* Keeps 1:1 aspect ratio */
+  object-fit: contain;
+  display: block;
+}
 .invitation-photo {
   display: block !important;
   margin-left: auto !important;
