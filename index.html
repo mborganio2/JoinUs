@@ -85,38 +85,42 @@
       <div class="footer-mark">With Love <span>♥</span> Mj & vena</div>
     </section>
 
-<!-- RSVP Popup Window -->
-   <!-- RSVP Popup Window -->
-    <div id="modal" class="modal-backdrop" style="display: none;">
-      <div class="modal">
-        <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
-        <h2>RSVP</h2>
-        <form>
-          <label>
-            Full Name
-            <input type="text" name="full_name" placeholder="Your Full Name" required>
-          </label>
-          <label>
-            Email Address
-            <input type="email" name="email" placeholder="your@email.com" required>
-          </label>
-          
-          <fieldset>
-            <legend>Attending?</legend>
-            <label>
-              <input type="radio" name="attendance" value="yes" checked> 
-              Joyfully Accepts
-            </label>
-            <label>
-              <input type="radio" name="attendance" value="no"> 
-              Regretfully Declines
-            </label>
-          </fieldset>
+<!-- RSVP Popup Window with Custom Design -->
+<div id="modal" class="modal-backdrop" style="display: none;">
+  <div class="modal">
+    <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
+    <h2>RSVP</h2>
+    
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <!-- Your free Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
-          <button type="submit" class="primary">Submit RSVP</button>
-        </form>
-      </div>
-    </div>
+      <label>
+        Full Name
+        <input type="text" name="full_name" placeholder="Your Full Name" required>
+      </label>
+
+      <label>
+        Email Address
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </label>
+      
+      <fieldset>
+        <legend>Attending?</legend>
+        <label>
+          <input type="radio" name="attendance" value="Joyfully Accepts" checked> 
+          Joyfully Accepts
+        </label>
+        <label>
+          <input type="radio" name="attendance" value="Regretfully Declines"> 
+          Regretfully Declines
+        </label>
+      </fieldset>
+
+      <button type="submit" class="primary">Submit RSVP</button>
+    </form>
+  </div>
+</div>
 
   </div>
 
