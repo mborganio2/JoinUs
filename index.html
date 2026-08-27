@@ -86,13 +86,13 @@
     </section>
 
 <!-- RSVP Popup Window with Custom Design -->
-<div id="modal" class="modal-backdrop" style="display: none;">
-  <div class="modal">
-    <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
+<div class="modal">
+  <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
+  
+  <!-- Content shown BEFORE submission -->
+  <div id="rsvp-form-container">
     <h2>RSVP</h2>
-    
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <!-- Your free Web3Forms Access Key -->
+    <form id="rsvp-form">
       <input type="hidden" name="access_key" value="c2f9f6de-83a7-4b1f-99d1-575f195f839e">
 
       <label>
@@ -117,8 +117,16 @@
         </label>
       </fieldset>
 
-      <button type="submit" class="primary">Submit RSVP</button>
+      <button type="submit" class="primary" id="rsvp-submit-btn">Submit RSVP</button>
     </form>
+  </div>
+
+  <!-- Content shown AFTER submission -->
+  <div id="rsvp-success-message" class="success" style="display: none;">
+    <span>✦</span>
+    <h2>You're on the list!</h2>
+    <p>We can't wait to celebrate this special blessing with you!</p>
+    <button class="primary" onclick="document.getElementById('modal').style.display='none'">Close</button>
   </div>
 </div>
 
