@@ -9,7 +9,7 @@
   
   max-width: 70%;
   height: auto;
-  width: 200px; /* Adjust size as needed */
+  width: 300px; /* Adjust size as needed */
   
   /* Removed border-radius and box-shadow to fit transparent PNGs */
   box-shadow: none !important;
