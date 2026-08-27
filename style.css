@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
-/* Container for the PNG icons */
+/* Container for PNG icons - Backgrounds removed */
 .detail-icon {
   width: 54px;
   height: 54px;
@@ -7,20 +7,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5%;
-  background: #edf3f4;
-  overflow: hidden; /* Keeps images neatly inside the circle */
+  /* Removed border-radius and background colors */
+  background: transparent !important;
 }
 
-/* Specific background for the middle icon container */
+/* Remove the color override on the middle item */
 .detail-grid article:nth-child(2) .detail-icon {
-  background: #fae8e7;
+  background: transparent !important;
 }
 
 /* PNG Image Styling */
 .detail-icon img {
-  width: 50px;       /* Adjust size as needed */
-  height: 50px;      /* Keeps 1:1 aspect ratio */
+  width: 100%;        /* Allows your image background to fill the space */
+  height: 100%;       
   object-fit: contain;
   display: block;
 }
