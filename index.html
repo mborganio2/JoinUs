@@ -84,6 +84,7 @@
     </section>
 
 <!-- RSVP Popup Window -->
+   <!-- RSVP Popup Window -->
     <div id="modal" class="modal-backdrop" style="display: none;">
       <div class="modal">
         <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
@@ -91,37 +92,24 @@
         <form>
           <label>
             Full Name
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" name="full_name" placeholder="Your Full Name" required>
           </label>
           <label>
             Email Address
-            <input type="email" placeholder="your@email.com" required>
+            <input type="email" name="email" placeholder="your@email.com" required>
           </label>
           
           <fieldset>
             <legend>Attending?</legend>
             <label>
-              <input type="radio" name="attendance" value="yes" checked onclick="document.getElementById('guest-details').style.display='block'"> 
+              <input type="radio" name="attendance" value="yes" checked> 
               Joyfully Accepts
             </label>
             <label>
-              <input type="radio" name="attendance" value="no" onclick="document.getElementById('guest-details').style.display='none'"> 
+              <input type="radio" name="attendance" value="no"> 
               Regretfully Declines
             </label>
           </fieldset>
-
-          <!-- Conditional Guest Count & Plus One Fields -->
-          <div id="guest-details">
-            <label>
-              Total Number of Guests (Including Yourself)
-              <input type="number" name="guest_count" min="1" max="5" value="1" required>
-            </label>
-
-            <label>
-              Bringing a +1? (Name of Guest)
-              <input type="text" name="plus_one_name" placeholder="Guest's Full Name (Optional)">
-            </label>
-          </div>
 
           <button type="submit" class="primary">Submit RSVP</button>
         </form>
