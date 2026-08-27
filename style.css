@@ -1,13 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
 
 .invitation-photo {
-  max-width: 75%;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+  max-width: 70%;
   height: auto;
-  width: 320px;            /* Adjust width as needed */
-  display: block;
-  margin: 30px auto;       /* Centers the image horizontally */
-  border-radius: 12px;     /* Optional rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Adjust size as needed */
+  
+  /* Removed border-radius and box-shadow to fit transparent PNGs */
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
 }
 :root {
   --ink: #24364b;
