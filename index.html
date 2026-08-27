@@ -86,8 +86,9 @@
     </section>
 
 <!-- RSVP Popup Window with Custom Design -->
-<div class="modal">
-  <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
+<div id="modal" class="modal-backdrop" style="display: none;">
+  <div class="modal">
+    <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
   
   <!-- Content shown BEFORE submission -->
   <div id="rsvp-form-container">
