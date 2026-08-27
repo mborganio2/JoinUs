@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 5%;
   background: #edf3f4;
   overflow: hidden; /* Keeps images neatly inside the circle */
 }
@@ -19,8 +19,8 @@
 
 /* PNG Image Styling */
 .detail-icon img {
-  width: 24px;       /* Adjust size as needed */
-  height: 24px;      /* Keeps 1:1 aspect ratio */
+  width: 50px;       /* Adjust size as needed */
+  height: 50px;      /* Keeps 1:1 aspect ratio */
   object-fit: contain;
   display: block;
 }
