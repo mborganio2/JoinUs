@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
 
+.invitation-photo {
+  max-width: 100%;
+  height: auto;
+  width: 320px;            /* Adjust width as needed */
+  display: block;
+  margin: 30px auto;       /* Centers the image horizontally */
+  border-radius: 12px;     /* Optional rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 :root {
   --ink: #24364b;
   --pink: #eeb7bd;
