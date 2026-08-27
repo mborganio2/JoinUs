@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<body>
-  <main class="page-container">
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,111 +8,105 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <nav>
-      <div class="brand">Mj <span>&</span> Vena </div>
-      <div class="nav-links">
-        <a href="#details">Details</a>
-        <a href="#rsvp">RSVP</a>
+  <div class="page-wrapper">
+
+    <section class="hero">
+      <nav>
+        <div class="brand">NAME <span>&</span> NAME</div>
+        <div class="nav-links">
+          <a href="#details">Details</a>
+          <a href="#rsvp">RSVP</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">You Are Invited To Celebrate</p>
+        <h1>Our <em>Special</em> Day</h1>
+        <p class="intro">Join us for an unforgettable evening of celebration, dining, and joy.</p>
+        
+        <div class="date-lockup">
+          <span>SATURDAY</span>
+          <strong>24</strong>
+          <span>OCTOBER</span>
+        </div>
+
+        <a href="#rsvp" class="primary">RSVP Now <span>&rarr;</span></a>
       </div>
-    </nav>
 
-    <div class="hero-content">
-      <p class="eyebrow">You Are Invited To Celebrate</p>
-      <h1>Our <em>Special</em> Day</h1>
-      <p class="intro">Join us for an unforgettable evening of celebration, dining, and joy.</p>
-      
-      <div class="date-lockup">
-        <span>SATURDAY</span>
-        <strong>24</strong>
-        <span>OCTOBER</span>
+      <div class="moon"></div>
+      <div class="star star-one">✦</div>
+      <div class="star star-two">★</div>
+      <div class="star star-three">✦</div>
+
+      <div class="scroll-note">
+        Scroll for details <span>↓</span>
+      </div>
+    </section>
+
+    <section id="details" class="details">
+      <h2>The Details</h2>
+      <div class="detail-grid">
+        <article>
+          <div class="detail-icon">📍</div>
+          <p>Location</p>
+          <h3>The Grand Venue</h3>
+          <span>123 Celebration Way, Cityville</span>
+        </article>
+        <article>
+          <div class="detail-icon">⏰</div>
+          <p>Time</p>
+          <h3>4:00 PM</h3>
+          <span>Ceremony followed by reception</span>
+        </article>
+        <article>
+          <div class="detail-icon">✨</div>
+          <p>Dress Code</p>
+          <h3>Formal Attire</h3>
+          <span>Earthy & neutral tones welcomed</span>
+        </article>
       </div>
 
-      <a href="#rsvp" class="primary">RSVP Now <span>&rarr;</span></a>
+      <div class="note-card">
+        <div>✦</div>
+        <p>"Your presence is the greatest gift of all."</p>
+        <small>We can't wait to celebrate with you.</small>
+      </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+      <div class="rsvp-card">
+        <p class="eyebrow">Kindly Respond</p>
+        <h2>Will You Join Us?</h2>
+        <p>Please let us know if you will be attending by October 1st.</p>
+        <button class="primary" onclick="document.getElementById('modal').style.display='grid'">Open RSVP Form <span>&rarr;</span></button>
+      </div>
+      <div class="footer-mark">With Love <span>♥</span> 2026</div>
+    </section>
+
+    <div id="modal" class="modal-backdrop" style="display: none;">
+      <div class="modal">
+        <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
+        <h2>RSVP</h2>
+        <form>
+          <label>
+            Full Name
+            <input type="text" placeholder="Your Name" required>
+          </label>
+          <label>
+            Email Address
+            <input type="email" placeholder="your@email.com" required>
+          </label>
+          <fieldset>
+            <legend>Attending?</legend>
+            <label><input type="radio" name="attendance" value="yes" checked> Joyfully Accepts</label>
+            <label><input type="radio" name="attendance" value="no"> Regretfully Declines</label>
+          </fieldset>
+          <button type="submit" class="primary">Submit RSVP</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Decorative Moon & Stars -->
-    <div class="moon">
-      <span>✦</span>
-      <i>★</i>
-    </div>
-    <div class="star star-one">✦</div>
-    <div class="star star-two">★</div>
-    <div class="star star-three">✦</div>
-
-    <div class="scroll-note">
-      Scroll for details <span>↓</span>
-    </div>
-  </section>
-
-  <!-- Event Details -->
-  <section id="details" class="details">
-    <h2>The Details</h2>
-    <div class="detail-grid">
-      <article>
-        <div class="detail-icon">📍</div>
-        <p>Location</p>
-        <h3>The Grand Venue</h3>
-        <span>123 Celebration Way, Cityville</span>
-      </article>
-      <article>
-        <div class="detail-icon">⏰</div>
-        <p>Time</p>
-        <h3>4:00 PM</h3>
-        <span>Ceremony followed by reception</span>
-      </article>
-      <article>
-        <div class="detail-icon">✨</div>
-        <p>Dress Code</p>
-        <h3>Formal Attire</h3>
-        <span>Earthy & neutral tones welcomed</span>
-      </article>
-    </div>
-
-    <div class="note-card">
-      <div>✦</div>
-      <p>"Your presence is the greatest gift of all."</p>
-      <small>We can't wait to celebrate with you.</small>
-    </div>
-  </section>
-
-  <!-- RSVP Section -->
-  <section id="rsvp" class="rsvp">
-    <div class="rsvp-card">
-      <p class="eyebrow">Kindly Respond</p>
-      <h2>Will You Join Us?</h2>
-      <p>Please let us know if you will be attending by October 1st.</p>
-      <button class="primary" onclick="document.getElementById('modal').style.display='grid'">Open RSVP Form <span>&rarr;</span></button>
-    </div>
-    <div class="footer-mark">With Love <span>♥</span> 2026</div>
-  </section>
-
-  <!-- RSVP Modal (Hidden by default) -->
-  <div id="modal" class="modal-backdrop" style="display: none;">
-    <div class="modal">
-      <button class="close" onclick="document.getElementById('modal').style.display='none'">&times;</button>
-      <h2>RSVP</h2>
-      <form>
-        <label>
-          Full Name
-          <input type="text" placeholder="Your Name" required>
-        </label>
-        <label>
-          Email Address
-          <input type="email" placeholder="your@email.com" required>
-        </label>
-        <fieldset>
-          <legend>Attending?</legend>
-          <label><input type="radio" name="attendance" value="yes" checked> Joyfully Accepts</label>
-          <label><input type="radio" name="attendance" value="no"> Regretfully Declines</label>
-        </fieldset>
-        <button type="submit" class="primary">Submit RSVP</button>
-      </form>
-    </div>
   </div>
 
 </body>
 </html>
-</main>
-</body>
