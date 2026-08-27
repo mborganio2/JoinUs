@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
 
 .invitation-photo {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   width: 320px;            /* Adjust width as needed */
   display: block;
