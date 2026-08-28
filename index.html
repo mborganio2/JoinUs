@@ -162,6 +162,67 @@
 </div>
 
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const rsvpForm = document.getElementById('rsvp-form');
+    const formContainer = document.getElementById('rsvp-form-container');
+    const successMessage = document.getElementById('rsvp-success-message');
+    const submitBtn = document.getElementById('rsvp-submit-btn');
 
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Stop standard page refresh
+
+        // Provide immediate visual feedback on the button
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Submitting...';
+
+        const formData = new FormData(rsvpForm);
+        const jsonObject = Object.fromEntries(formData);
+
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(jsonObject)
+          });
+
+          const result = await response.json();
+
+          if (response.status === 200) {
+            // Hide the form view and show the success message view
+            formContainer.style.display = 'none';
+            successMessage.style.display = 'block';
+            rsvpForm.reset(); // Reset form inputs
+          } else {
+            alert('Submission failed: ' + (result.message || 'Please check your details and try again.'));
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          alert('Network error. Please check your internet connection and try again.');
+        } finally {
+          // Restore button state
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalBtnText;
+        }
+      });
+    }
+  });
+
+  // Optional Helper: Resets the modal views when closed
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    
+    // Reset view back to form container for the next time the modal opens
+    setTimeout(() => {
+      document.getElementById('rsvp-form-container').style.display = 'block';
+      document.getElementById('rsvp-success-message').style.display = 'none';
+    }, 300);
+  }
+</script>
 </body>
 </html>
