@@ -33,7 +33,7 @@
 
     <section class="hero">
       <nav>
-        <div class="brand">Mj <span>&</span> Vena</div>
+        <div class="brand">MJ <span>&</span> Vena</div>
         <div class="nav-links">
           <a href="#details">Details</a>
           <a href="#rsvp">RSVP</a>
@@ -69,7 +69,7 @@
     <section id="details" class="details">
       <h2>The Details</h2>
       <div class="detail-grid">
-          <article>
+        <article>
           <div class="detail-icon">
             <img src="Location.png" alt="Location Icon">
           </div>
@@ -93,139 +93,132 @@
           <h3>Casual Attire</h3>
           <span>Come celebrate with us in White</span>
         </article>
-
       </div>
 
       <div class="note-card">
-      
         <p>"Your presence is the greatest gift of all."</p>
         <small>We can't wait to celebrate with you.</small>
       </div>
     </section>
 
     <section id="rsvp" class="rsvp">
-  <div class="rsvp-card">
-    <p class="eyebrow">Kindly Respond</p>
-    <h2>Will You Join Us?</h2>
-    <p>Please let us know if you will be attending by September 12.</p>
-    <button class="primary" onclick="document.getElementById('modal').style.display='flex'">
-      Open RSVP Form <span>&rarr;</span>
-    </button>
-  </div>
-  <div class="footer-mark">With Love <span>♥</span> Mj & Vena</div>
-</section>
+      <div class="rsvp-card">
+        <p class="eyebrow">Kindly Respond</p>
+        <h2>Will You Join Us?</h2>
+        <p>Please let us know if you will be attending by September 12.</p>
+        <button class="primary" onclick="document.getElementById('modal').style.display='flex'">
+          Open RSVP Form <span>&rarr;</span>
+        </button>
+      </div>
+      <div class="footer-mark">With Love <span>♥</span> MJ & Vena</div>
+    </section>
 
-<!-- RSVP Popup Window with Custom Design -->
-<div id="modal" class="modal-backdrop" style="display: none;">
-  <div class="modal">
-    <!-- Updated Close Button -->
-    <button class="close" onclick="closeModal()">&times;</button>
-  
-    <!-- Content shown BEFORE submission -->
-    <div id="rsvp-form-container">
-      <h2>RSVP</h2>
-      <form id="rsvp-form">
-        <!-- Web3Forms Access Key -->
-        <input type="hidden" name="access_key" value="c2f9f6de-83a7-4b1f-99d1-575f195f839e">
+  </div> <!-- Closed page-wrapper -->
 
-        <label>
-          Full Name
-          <input type="text" name="full_name" placeholder="Your Full Name" required>
-        </label>
-
-        <!-- Updated Mobile Number Field -->
-        <label>
-          Mobile Number
-          <input type="tel" name="mobile_number" placeholder="0912 345 6789" required>
-        </label>
-        
-        <fieldset>
-          <legend>Attending?</legend>
-          <label>
-            <input type="radio" name="attendance" value="Joyfully Accepts" checked> 
-            Joyfully Accepts
-          </label>
-          <label>
-            <input type="radio" name="attendance" value="Regretfully Declines"> 
-            Regretfully Declines
-          </label>
-        </fieldset>
-
-        <button type="submit" class="primary" id="rsvp-submit-btn">Submit RSVP</button>
-      </form>
-    </div>
-
-    <!-- Content shown AFTER submission -->
-    <div id="rsvp-success-message" class="success" style="display: none;">
-      <span>✦</span>
-      <h2>You're on the list!</h2>
-      <p>We can'wait to celebrate this special blessing with you!</p>
-      <!-- Updated Success Close Button -->
-      <button class="primary" onclick="closeModal()">Close</button>
-    </div>
-  </div>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const rsvpForm = document.getElementById('rsvp-form');
-    const formContainer = document.getElementById('rsvp-form-container');
-    const successMessage = document.getElementById('rsvp-success-message');
-    const submitBtn = document.getElementById('rsvp-submit-btn');
-
-    if (rsvpForm) {
-      rsvpForm.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Stop standard page refresh
-
-        // Provide immediate visual feedback on the button
-        const originalBtnText = submitBtn.innerText;
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Submitting...';
-
-        const formData = new FormData(rsvpForm);
-        const jsonObject = Object.fromEntries(formData);
-
-        try {
-          const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(jsonObject)
-          });
-
-          const result = await response.json();
-
-          if (response.status === 200) {
-            // Hide the form view and show the success message view
-            formContainer.style.display = 'none';
-            successMessage.style.display = 'block';
-            rsvpForm.reset(); // Reset form inputs
-          } else {
-            alert('Submission failed: ' + (result.message || 'Please check your details and try again.'));
-          }
-        } catch (error) {
-          console.error('Error submitting form:', error);
-          alert('Network error. Please check your internet connection and try again.');
-        } finally {
-          // Restore button state
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalBtnText;
-        }
-      });
-    }
-  });
-
-  // Optional Helper: Resets the modal views when closed
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+  <!-- RSVP Popup Window -->
+  <div id="modal" class="modal-backdrop" style="display: none;">
+    <div class="modal">
+      <button class="close" onclick="closeModal()">&times;</button>
     
-    // Reset view back to form container for the next time the modal opens
-    setTimeout(() => {
-      document.getElementById('rsvp-form-container').style.display = 'block';
-      document.getElementById('rsvp-success-message').style.display = 'none';
-    }, 300);
-  }
-</script>
+      <!-- Content shown BEFORE submission -->
+      <div id="rsvp-form-container">
+        <h2>RSVP</h2>
+        <form id="rsvp-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c2f9f6de-83a7-4b1f-99d1-575f195f839e">
+
+          <label>
+            Full Name
+            <input type="text" name="full_name" placeholder="Your Full Name" required>
+          </label>
+
+          <label>
+            Mobile Number
+            <input type="tel" name="mobile_number" placeholder="0912 345 6789" required>
+          </label>
+          
+          <fieldset>
+            <legend>Attending?</legend>
+            <label>
+              <input type="radio" name="attendance" value="Joyfully Accepts" checked> 
+              Joyfully Accepts
+            </label>
+            <label>
+              <input type="radio" name="attendance" value="Regretfully Declines"> 
+              Regretfully Declines
+            </label>
+          </fieldset>
+
+          <button type="submit" class="primary" id="rsvp-submit-btn">Submit RSVP</button>
+        </form>
+      </div>
+
+      <!-- Content shown AFTER submission -->
+      <div id="rsvp-success-message" class="success" style="display: none;">
+        <span>✦</span>
+        <h2>You're on the list!</h2>
+        <p>We can't wait to celebrate this special blessing with you!</p>
+        <button class="primary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rsvpForm = document.getElementById('rsvp-form');
+      const formContainer = document.getElementById('rsvp-form-container');
+      const successMessage = document.getElementById('rsvp-success-message');
+      const submitBtn = document.getElementById('rsvp-submit-btn');
+
+      if (rsvpForm) {
+        rsvpForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          const originalBtnText = submitBtn.innerText;
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Submitting...';
+
+          const formData = new FormData(rsvpForm);
+          const jsonObject = Object.fromEntries(formData);
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(jsonObject)
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200) {
+              formContainer.style.display = 'none';
+              successMessage.style.display = 'block';
+              rsvpForm.reset();
+            } else {
+              alert('Submission failed: ' + (result.message || 'Please check your details and try again.'));
+            }
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Network error. Please check your internet connection and try again.');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+          }
+        });
+      }
+    });
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      
+      setTimeout(() => {
+        document.getElementById('rsvp-form-container').style.display = 'block';
+        document.getElementById('rsvp-success-message').style.display = 'none';
+      }, 300);
+    }
+  </script>
+
 </body>
 </html>
