@@ -115,52 +115,59 @@
 
   </div> <!-- Closed page-wrapper -->
 
-  <!-- RSVP Popup Window -->
-  <div id="modal" class="modal-backdrop" style="display: none;">
-    <div class="modal">
-      <button class="close" onclick="closeModal()">&times;</button>
-    
-      <!-- Content shown BEFORE submission -->
-      <div id="rsvp-form-container">
-        <h2>RSVP</h2>
-        <form id="rsvp-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="c2f9f6de-83a7-4b1f-99d1-575f195f839e">
+<!-- RSVP Popup Window -->
+<div id="modal" class="modal-backdrop" style="display: none;">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+  
+    <!-- Content shown BEFORE submission -->
+    <div id="rsvp-form-container">
+      <h2>RSVP</h2>
+      <form id="rsvp-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="c2f9f6de-83a7-4b1f-99d1-575f195f839e">
+        
+        <!-- Web3Forms Fallback Email -->
+        <input type="hidden" name="email" value="rsvp@mjandvenagreatestblessing.life">
+        
+        <!-- Form Subject -->
+        <input type="hidden" name="subject" value="New Wedding RSVP Submission">
 
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Your Full Name" required>
+        </label>
+
+        <label>
+          Mobile Number
+          <input type="tel" name="phone" placeholder="0912 345 6789" required>
+        </label>
+        
+        <fieldset>
+          <legend>Attending?</legend>
           <label>
-            Full Name
-            <input type="text" name="full_name" placeholder="Your Full Name" required>
+            <input type="radio" name="attendance" value="Joyfully Accepts" checked> 
+            Joyfully Accepts
           </label>
-
           <label>
-            Mobile Number
-            <input type="tel" name="mobile_number" placeholder="0912 345 6789" required>
+            <input type="radio" name="attendance" value="Regretfully Declines"> 
+            Regretfully Declines
           </label>
-          
-          <fieldset>
-            <legend>Attending?</legend>
-            <label>
-              <input type="radio" name="attendance" value="Joyfully Accepts" checked> 
-              Joyfully Accepts
-            </label>
-            <label>
-              <input type="radio" name="attendance" value="Regretfully Declines"> 
-              Regretfully Declines
-            </label>
-          </fieldset>
+        </fieldset>
 
-          <button type="submit" class="primary" id="rsvp-submit-btn">Submit RSVP</button>
-        </form>
-      </div>
+        <button type="submit" class="primary" id="rsvp-submit-btn">Submit RSVP</button>
+      </form>
+    </div>
 
-      <!-- Content shown AFTER submission -->
-      <div id="rsvp-success-message" class="success" style="display: none;">
-        <span>✦</span>
-        <h2>You're on the list!</h2>
-        <p>We can't wait to celebrate this special blessing with you!</p>
-        <button class="primary" onclick="closeModal()">Close</button>
-      </div>
+    <!-- Content shown AFTER submission -->
+    <div id="rsvp-success-message" class="success" style="display: none;">
+      <span>✦</span>
+      <h2>You're on the list!</h2>
+      <p>We can't wait to celebrate this special blessing with you!</p>
+      <button class="primary" onclick="closeModal()">Close</button>
     </div>
   </div>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
