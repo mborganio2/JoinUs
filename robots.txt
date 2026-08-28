@@ -1,4 +1,3 @@
-Plaintext
 User-agent: facebookexternalhit
 Allow: /
 
