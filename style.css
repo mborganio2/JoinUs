@@ -1,44 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
-/* Container for PNG icons - Backgrounds removed */
-.detail-icon {
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Removed border-radius and background colors */
-  background: transparent !important;
-}
 
-/* Remove the color override on the middle item */
-.detail-grid article:nth-child(2) .detail-icon {
-  background: transparent !important;
-}
-
-/* PNG Image Styling */
-.detail-icon img {
-  width: 100%;        /* Allows your image background to fill the space */
-  height: 100%;       
-  object-fit: contain;
-  display: block;
-}
-.invitation-photo {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  
-  max-width: 70%;
-  height: auto;
-  width: 400px; /* Adjust size as needed */
-  
-  /* Removed border-radius and box-shadow to fit transparent PNGs */
-  box-shadow: none !important;
-  border: none !important;
-  background: transparent !important;
-}
 :root {
   --ink: #24364b;
   --pink: #eeb7bd;
@@ -173,6 +134,20 @@ h1 {
 h1 em {
   color: #b36978;
   font-style: normal;
+}
+
+.invitation-photo {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 70%;
+  height: auto;
+  width: 400px;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 .intro {
@@ -315,21 +290,22 @@ h1 em {
   border-left: 1px solid #d9d9d2;
 }
 
+/* PNG Icon Container */
 .detail-icon {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   margin: 0 auto 20px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #edf3f4;
-  color: #8ba9b8;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
 }
 
-.detail-grid article:nth-child(2) .detail-icon {
-  background: #fae8e7;
-  color: #c98791;
+.detail-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .detail-grid p {
@@ -357,19 +333,6 @@ h1 em {
   margin: auto;
   padding: 30px;
   border: 1px solid #e0d9cb;
-}
-
-.note-card div {
-  position: absolute;
-  top: -21px;
-  left: 50%;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #f6eedf;
-  transform: translateX(-50%);
 }
 
 .note-card p {
@@ -400,14 +363,15 @@ h1 em {
   text-transform: uppercase;
 }
 
-/* RSVP Modal */
+/* RSVP Modal Backdrop - Fixed Flex Centering */
 .modal-backdrop {
   position: fixed;
-  z-index: 10;
+  z-index: 9999;
   inset: 0;
   padding: 20px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(26, 40, 56, 0.55);
   backdrop-filter: blur(8px);
 }
@@ -420,6 +384,7 @@ h1 em {
   overflow: auto;
   background: var(--paper);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
 }
 
 .close {
